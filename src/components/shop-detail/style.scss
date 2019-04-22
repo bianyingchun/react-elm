@@ -1,0 +1,12 @@
+.activities{
+	display:flex;
+	justify-content:space-between;
+	.short-cut{
+		flex:1;
+		margin-right: 10px;
+	}
+}
+.notice{
+	color:#666;
+	font-size:12px;
+}

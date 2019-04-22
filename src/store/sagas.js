@@ -1,8 +1,9 @@
 import {all } from 'redux-saga/effects'
-import * as header_sagas from '../components/header/store/sagas';
-
+import * as headerSagas from '../components/header/store/sagas';
+import * as shopSagas from '../components/shop-detail/store/sagas'
 export default function* rootSaga() {
   yield all([
-    header_sagas.watchGetHomeShopList()
+    headerSagas.watchGetHomeShopList(),
+    shopSagas.watchGetShopDetail()
   ])
 }

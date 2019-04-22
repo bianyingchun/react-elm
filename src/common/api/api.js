@@ -9,8 +9,9 @@ export function getShopList(pos, offset, option) {
   })
 }
 export function getShopDetail(id) {
+  console.log('getShopDetail', id)
   return new Promise((resolve, reject) => {
-    axios.get('/api/shopList.json').then(res => {
+    axios.get('/api/shopDetail.json').then(res => {
       resolve({err:null, data:res.data})
     }).catch(error => {
       reject({err:error});
