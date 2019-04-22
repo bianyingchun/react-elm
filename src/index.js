@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import FastClick from 'fastclick';
-import {Provider} from 'react-redux';
-import './index.css';
+import './style/base.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

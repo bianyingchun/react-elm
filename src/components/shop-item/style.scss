@@ -1,0 +1,77 @@
+.wraper{
+  border-bottom:1px solid #ccc;
+  display: flex;
+  padding:20px 10px;
+  .pic{
+    width:65px;
+    height: 65px;
+    margin-right: 0.1rem;
+  }
+  .text{
+    flex:1;
+    color:#666;
+    font-size:0.12rem;
+    div span:nth-of-type(2) {
+      overflow: hidden;
+      margin-left:0.08rem;
+    }
+    .title{
+      font-size:0.14rem;
+      font-weight: bold;
+    }
+    .charactor{
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+    .feature{
+      display: flex;
+      transform-origin:center right;
+      transform: scale(0.8,0.8);
+      div{
+        box-sizing: border-box;
+        padding: 2px 5px;
+      } 
+    }
+    .tag_list{
+      max-width:80%;
+      display: inline-block;
+      transform: scale(0.75,0.75);
+      transform-origin: center left;
+      padding: 2px 5px;
+      .tag{
+          margin-right:4px;
+          margin-bottom: 4px;
+          padding: 2px;
+          display: inline-block;
+          border-width:1px;
+          border-style:solid;
+          color:red;
+      }
+    }
+    .activities{
+      display: flex;
+      .list{
+        height: auto;
+        flex:1;
+        overflow: hidden;
+        .activity{
+          margin-right:4px;
+          font-size: 10px;
+          margin-bottom: 2px;
+          line-height: 16px;
+          display: flex;
+          .icon{
+            color:#fff;
+            display: inline-block;
+            height:16px;
+            padding: 0 2px;
+          }
+        }
+      }
+      .toggle_btn{
+        color:#999;
+      }
+    }
+  }
+}
