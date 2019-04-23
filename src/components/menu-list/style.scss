@@ -1,0 +1,15 @@
+.menu_wraper{
+  display: flex;
+  margin-top:20px;
+  position: relative;
+  height:400px;
+  .nav_list{
+    width:80px;
+    margin-right: 10px;
+    height:100%;
+  }
+  .food_list{
+    flex:1;
+    height: 100%
+  }
+}

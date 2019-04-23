@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {toJS} from 'immutable';
 import {connect} from 'react-redux';
 import {formatDistance, getImgaeUrl} from '../../common/util'
+import MenuList from '../menu-list'
 import './style.scss'
 class ShopDetail extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class ShopDetail extends Component {
     this.props.getShopDetail(id);
   };
   render() {
-    const {rst} = this.props;
+    const {rst, menu} = this.props;
     if(!rst.name) return null
     return (
       <div>
@@ -37,6 +38,9 @@ class ShopDetail extends Component {
               公告：欢迎光临，用餐高峰期请提前下单，谢谢。</div>
             </div>
           </div>
+        </div>
+        <div>
+          <MenuList menu={menu}></MenuList>
         </div>
       </div>
     )

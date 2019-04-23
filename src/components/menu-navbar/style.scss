@@ -1,0 +1,12 @@
+.list{
+  height: 100%;
+  overflow: scroll;
+  background: #f8f8f8;
+  color:#666;
+  .item{
+    padding: 15px 5px;
+    &.active{
+      background: #fff;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.food_wraper{
+  margin: 15px 0;
+  display: flex;
+  position: relative;
+  .pic{
+    width:130px;
+    height: 130px;
+  }
+  .text{
+    flex:1;
+    font-size:12px;
+    color:#666;
+    padding: 0 20px 30px 10px;
+    div{
+      margin:5px; 
+    }
+    .title{
+      font-weight: bold;
+      font-size:16px;
+      color:#333;
+    }
+  }
+  .cart_button{
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+  }
+}
