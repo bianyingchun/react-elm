@@ -35,12 +35,12 @@ class FoodList extends Component {
     this.props.toggle_menu(i)
   };
   componentDidMount() {
-    const wraperDom = this.refs.list_wraper;
+    const wraperDom = this.refs.list_content;
     const itemDoms = wraperDom.getElementsByClassName('menu_item');
     let arr = [], top = 0;
     for(var i = 0; i < itemDoms.length; i++) {
       arr.push(top);
-      top += itemDoms[i].clientHeight
+      top += itemDoms[i].clientHeight;
     }
     this.pos_arr = arr;
   };
@@ -58,11 +58,9 @@ class FoodList extends Component {
       )
     });
     
-    // const styleObj = {transform:`translate3d(0, ${-offsetY}px, 0)`}
-    // console.log(styleObj)
     return (
     <div className="list" onScroll={(e)=>this.onContentScroll(e)} ref="wraper">
-      <div ref="list_wraper" className="content">{list}</div>
+      <div ref="list_content" className="content">{list}</div>
     </div>
     )
   }

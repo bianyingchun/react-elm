@@ -1,12 +1,19 @@
-.activities{
-	display:flex;
-	justify-content:space-between;
-	.short-cut{
-		flex:1;
-		margin-right: 10px;
-	}
-}
-.notice{
-	color:#666;
-	font-size:12px;
+@import '../../style/mixin.scss';
+.info{
+  font-size:pxTorem(32px);
+  .navbar{
+    height:pxTorem(200px);
+    }
+  .activities{
+  	display:flex;
+  	justify-content:space-between;
+  	.short-cut{
+  		flex:1;
+  		margin-right: 10px;
+  	}
+  }
+  .notice{
+  	color:#666;
+  	font-size:12px;
+  }
 }

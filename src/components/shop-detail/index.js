@@ -18,7 +18,9 @@ class ShopDetail extends Component {
     return (
       <div>
         <div className="info">
-          <div className="navbar">back</div>
+          <div className="navbar">
+            <span>back</span>
+          </div>
           <div className="content">
             <img className="avatar" alt="" src={getImgaeUrl(rst.image_path)}/>
             <div className="base_info">
@@ -40,12 +42,13 @@ class ShopDetail extends Component {
           </div>
         </div>
         <div>
-          <MenuList menu={menu}></MenuList>
+ 
         </div>
       </div>
     )
   }
-}
+}         
+// <MenuList menu={menu}></MenuList>
 const mapStateToProps = (state) => {
   return {
     rst:state.getIn(['shop','rst']).toJS(),
