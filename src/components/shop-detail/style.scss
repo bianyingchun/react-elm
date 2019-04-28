@@ -3,17 +3,133 @@
   font-size:pxTorem(32px);
   .navbar{
     height:pxTorem(200px);
-    }
-  .activities{
-  	display:flex;
-  	justify-content:space-between;
-  	.short-cut{
-  		flex:1;
-  		margin-right: 10px;
-  	}
   }
-  .notice{
-  	color:#666;
-  	font-size:12px;
-  }
+	.content{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position:relative;
+		>div{
+			margin-bottom: 10px;
+		}
+		.avatar{
+			margin-top: pxTorem(-100px);
+			margin-bottom: pxTorem(30px);
+		}
+		.title{
+			font-weight:bold;
+			font-size: pxTorem(41px);
+		}
+		.addition{
+			color:#666;
+			font-size: pxTorem(22px);
+			span:not(:last-child){
+				margin-right:pxTorem(20px);
+			}
+		}
+	  .activities{
+	  	display:flex;
+	  	justify-content:space-between;
+	  	font-size:pxTorem(22px);
+			align-items:center;
+	  	.icon{
+				border-radius: 4px;
+				margin-right: 12px;
+				color:#fff;
+				padding:2px 4px;
+	  	}
+	  	.count{
+	  		margin-left: 30px;
+	  		color:#999
+	  	}
+	  }
+	  .notice{
+	  	width:80%;
+	  	color:#666;
+	  	font-size:pxTorem(22px);
+	  	overflow: hidden;
+    	text-overflow: ellipsis;
+    	text-align: center;
+    	margin:0 auto pxTorem(20px) auto
+	  }
+	}
+	.activity_sheet{
+		position:fixed;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		.mask{
+			position:absolute;
+			background:rgba(0,0,0,0.5);
+			width:100%;
+			height: 100%;
+			left:0;
+			right:0;
+		}
+		.content_wraper{
+			position:absolute;
+			background:#f5f5f5;
+			width:100%;
+			left:0;
+			bottom:0;
+			box-sizing:border-box;
+			padding:pxTorem(40px) pxTorem(52px);
+			min-height: pxTorem(530px);
+			.title{
+				text-align: center;
+				font-size: pxTorem(40px);
+				font-weight: bold;
+				margin-bottom: pxTorem(31px);
+			}
+			.close_btn{
+				position:absolute;
+				right:pxTorem(20px);
+				top:pxTorem(20px);
+			}
+			.alist{
+				font-size: pxTorem(26px);
+				line-height: 1.38;
+				.activity_item{
+					margin-bottom:pxTorem(24px);
+					.icon{
+						border-radius:4px;
+						margin-right: 12px;
+						color:#fff;
+						padding:2px 4px;
+					}
+				}
+			}
+		}
+	}
+}
+.shoptab{
+	display:flex;
+	font-size:pxTorem(30px);
+	border-bottom:1px solid #ebebeb;
+	.tab_item{
+		flex:1;
+		text-align: center;
+		color:#666;
+		position:relative;
+		span{
+			line-height: pxTorem(81px);
+			height: pxTorem(81px);
+			display: inline-block;
+			position:relative
+		}
+		&.active{
+			color:#333;
+			& span::after{
+				content:'';
+				position:absolute;
+				height: 4px;
+				background:#2395ff;
+				width:100%;
+				bottom:0;
+				left:0
+			}
+		}
+	}
+	
 }
