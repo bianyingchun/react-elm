@@ -1,0 +1,60 @@
+@import '../../style/mixin.scss';
+.profile_wraper{
+	.header{
+		padding:pxTorem(50px) pxTorem(30px);
+		background-image: linear-gradient(90deg,#0af,#0085ff);
+		color:#fff;
+		display:flex;
+		align-items:center;
+		.avatar{
+			width:pxTorem(120px);
+			height: pxTorem(120px);
+			border-radius:50%;
+			background-position: 0px 600px;
+	    background-size: 120px;
+	    background-image:url(http://shadow.elemecdn.com/faas/h5/static/sprite.3ffb5d8.png);
+		}
+		.text{
+			flex:1;
+			margin-left: pxTorem(36px);
+			p{
+				overflow: hidden;
+    		white-space: nowrap;
+    		text-overflow: ellipsis;
+    		&.username{
+    			font-size: pxTorem(42px);
+    			font-weight: bold;
+    			margin-bottom: pxTorem(16px);
+    		}
+    		&.tel{
+    			font-size:pxTorem(24px);
+    		}
+			}
+		}
+	}
+	.main{
+		background:#fff;
+		display: flex;
+		.section{
+			flex:1;
+			text-align: center;
+			padding:pxTorem(30px);
+			&:not(:last-child){
+				border-right:1px solid #ddd;
+			}
+			p{
+				font-weight: 500;
+    		color: #666;
+				span {
+					font-size: pxTorem(52px);
+				}
+				&.red{
+					color:red;
+				}
+				&.green{
+					color: green;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+@import '../../../style/mixin.scss';
+.ordercard_wraper{
+	font-size:pxTorem(32px);
+	padding:pxTorem(20px) 0 0 pxTorem(20px);
+	margin:pxTorem(20px) 0;
+	background-color:#fff;
+	.ordercard_body{
+		display:flex;
+		.img{
+			margin-right: pxTorem(20px);
+			.logo{
+				border:1px solid #eee;
+				border-radius:pxTorem(2px);
+				width:pxTorem(64px);
+				height: pxTorem(64px);
+			}
+		}
+		.content{
+			flex:1;
+			font-size:pxTorem(26px);
+	    .header{
+				border-bottom:1px solid #eee;
+	    	padding:0 pxTorem(26px) pxTorem(20px) 0;
+	    	.title{
+	    		display: flex;
+	    		align-items: center;
+	    		justify-content: space-between;
+	    		.name{
+	    			max-width: 10em;
+	    			overflow: hidden;
+	    			text-overflow: ellipsis;
+	    			font-size:pxTorem(32px);
+	    		}
+	    	}
+	    	.datetime{
+	    		font-size:pxTorem(22px);
+	    		color:#999;
+	    	}
+	    }
+	    .order-detail{
+	    	border-bottom:1px solid #eee;
+	    	padding:pxTorem(20px) pxTorem(26px) pxTorem(20px) 0;
+	    	.detail{
+	    		display: flex;
+	    		justify-content: space-between;
+	    		align-items:ceter;
+	    	}
+	    }
+		}
+	}
+	.order_footer{
+		display: flex;
+		justify-content: flex-end;
+		padding:pxTorem(20px) pxTorem(32px);
+		.card_button{
+			padding: pxTorem(10px) pxTorem(20px);
+	    border: 1px solid #2395ff;
+	    border-radius: pxTorem(8px);
+	    background-color: transparent;
+	    outline: none;
+	    font-size: pxTorem(28px);
+	    color: #2395ff;
+	    margin-left: pxTorem(10px);
+	  }
+	}
+}

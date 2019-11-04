@@ -1,3 +1,4 @@
+@import '../../style/mixin.scss';
 .list{
   height: 100%;
   overflow: scroll;
@@ -5,15 +6,15 @@
     transition: .3s all ease-in-out;
     .title{
       display: flex;
-      height: 24px;
-      line-height: 24px;
+      height: pxTorem(48px);
+      line-height: pxTorem(48px);
       .name{
         font-weight: bold;
-        font-size: 14px;
-        margin-right: 10px
+        font-size: pxTorem(24px);
+        margin-right: pxTorem(20px);
       }
       .desc{
-        font-size: 12px;
+        font-size:pxTorem(24px);
         color: #666;
         
       }

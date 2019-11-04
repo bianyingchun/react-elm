@@ -1,33 +1,46 @@
 import React,{Component} from 'react';
 import {toJS} from 'immutable';
 import {connect} from 'react-redux';
-import {formatDistance, getImgaeUrl} from '../../common/util'
+import {formatDistance, getImgaeUrl, getWinHeight} from '../../common/util'
 import MenuList from '../menu-list'
+import ShopComment from '../shop-comment'
+import ShopInfo from '../shop-info'
 import './style.scss'
 class ShopDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show_activity_sheet:false
+      show_activity_sheet:false,
+      current_index:0
     };
-    this.toggle_activity_sheet = this.toggle_activity_sheet.bind(this)
-  };
-  calc_shoptab_pos() {
-    console.log(this.refs);
-    // const pos = shoptab.get​Bounding​Client​Rect();
-    // console.log(pos)
+    this.toggle_activity_sheet = this.toggle_activity_sheet.bind(this);
+    this.toggle_tab_content = this.toggle_tab_content.bind(this);
   };
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.getShopDetail(id);
+  };
+
+  componentDidUpdate() {
     this.calc_shoptab_pos();
   };
+
+  toggle_tab_content(e,index) {
+    e.stopPropagation();
+    this.setState({current_index:index})
+  };
+
+  calc_shoptab_pos() {
+    this.tab_pos = this.refs.shoptab.getBoundingClientRect();
+    this.menu.style.height = getWinHeight() -this.tab_pos.height +'px';
+  };
+
   toggle_activity_sheet(isshow) {
     this.setState({show_activity_sheet:isshow})
   };
+
   activity_sheet(activities) {
     if(!this.state.show_activity_sheet) return null;
-
     const items = activities.map((activity,index) => {
       let styleObj = {
         backgroundColor:'#'+activity.icon_color
@@ -56,12 +69,38 @@ class ShopDetail extends Component {
       </div>
       )
   };
+  show_content() {
+    let index = this.state.current_index;
+    const id = this.props.match.params.id;
+    if(index === 0) {
+      return  <MenuList menu={this.props.menu} id={id}></MenuList>
+    } else if(index === 1){
+      if(!this.props.comment.rating) {
+          this.props.getShopComment(id);
+        }
+      return  <ShopComment info={this.props.comment}></ShopComment>
+    } else {
+      if(!this.props.brand_story.title){
+          this.props.getBrandStory(id); 
+      }
+      return <ShopInfo brand_story={this.props.brand_story} rst= {this.props.rst}></ShopInfo>
+    }
+  };
+
   render() {
-    const {rst, menu} = this.props;
-    if(!rst.name) return null;
+    const {rst, menu, comment,brand_story} = this.props;
+    if(!rst.name) return null
     let navStyleObj = {
       backgroundImage:`url(${getImgaeUrl(rst.shop_sign.image_hash,true)})`
-    }
+    };
+    let tab_list = ['点餐','评价','商家'].map((title, index) => {
+        let name = 'tab_item';
+        if(this.state.current_index === index) name = 'tab_item active'
+       return <div className={name} onClick={(e)=>{
+        this.toggle_tab_content(e, index)
+       }} key={index}><span>{title}</span></div>
+      });
+
     return (
       <div className="shop_detail">
         <div className="info">
@@ -90,30 +129,38 @@ class ShopDetail extends Component {
           </div>
           {this.activity_sheet(rst.activities)}
         </div>
-        <div className="shoptab" ref="shoptab">
-          <div className="tab_item active"><span>点餐</span></div>
-          <div className="tab_item"><span>评价</span></div>
-          <div className="tab_item"><span>商家</span></div>
+        <div className="shoptab" ref="shoptab" >
+          {tab_list}
         </div>
-        <div className="tab_content">
+        <div className="tab_content" ref={r =>{
+        this.menu = r}}>
+          {this.show_content()}
         </div>
       </div>
     )
   }
 }         
-// <MenuList menu={menu}></MenuList>
+
 const mapStateToProps = (state) => {
   return {
     rst:state.getIn(['shop','rst']).toJS(),
     bought_list:state.getIn(['shop','bought_list']).toJS(),
     menu:state.getIn(['shop','menu']).toJS(),
-    recommend:state.getIn(['shop','recommend']).toJS()
+    recommend:state.getIn(['shop','recommend']).toJS(),
+    comment:state.getIn(['shop','comment']).toJS(),
+    brand_story:state.getIn(['shop','brand_story']).toJS()
   }
 }
 
 const mapdispatchToProps = dispatch =>({
   getShopDetail(id) {
     dispatch({type:"FETCH_SHOPDETAIL", id:id})
+  },
+  getShopComment(id) {
+    dispatch({type:"FETCH_SHOPCOMMENT", id:id})
+  },
+  getBrandStory(id) {
+    dispatch({type:"FETCH_BRANDSTORY", id:id})
   }
 })
 export default connect(mapStateToProps, mapdispatchToProps)(ShopDetail); 

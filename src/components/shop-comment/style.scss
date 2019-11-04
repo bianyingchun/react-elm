@@ -1,0 +1,55 @@
+@import '../../style/mixin.scss';
+.comment_wraper{
+	background:#f5f5f5;
+	height:100%;
+	overflow:scroll;
+	.overview{
+		background:#fff;
+		margin-bottom: pxTorem(16px);
+		display:flex;
+		align-items:center;
+		font-size:pxTorem(30px);
+		color:#666;
+		padding:pxTorem(30px) 0 pxTorem(45px) pxTorem(36px);
+		.score{
+			font-size: pxTorem(57px);
+			color: #ff6000;
+		}
+		.rating{
+			display: flex;
+			flex:1;
+			.item{
+				flex:1;
+				display: flex;
+				align-items:center;
+				flex-direction: column;
+				font-size: pxTorem(24px);
+				.num{
+					margin-top:15px;
+					font-weight:400;
+					font-size: pxTorem(40px);
+				}
+			}
+		}
+	}
+	.content{
+		background:#fff;
+		padding:pxTorem(20px) pxTorem(24px) 0;
+		.tag_list{
+			list-style:none;
+			font-size: pxTorem(24px);
+			padding:0 0 pxTorem(20px) 0;
+			margin:0;
+			border-bottom: 1px solid #eee;
+			li{
+				display: inline-block;
+				padding:0 pxTorem(18px);
+				margin:pxTorem(7px);
+				height: pxTorem(56px);
+				line-height: pxTorem(56px);
+				border-radius:0.53vw;
+				background:#f5f5f5;
+			}
+		}
+	}
+}

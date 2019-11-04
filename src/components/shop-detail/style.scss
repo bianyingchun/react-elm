@@ -107,6 +107,10 @@
 	display:flex;
 	font-size:pxTorem(30px);
 	border-bottom:1px solid #ebebeb;
+	width:100%;
+	top:0;
+	left:0;
+	background:#fff;
 	.tab_item{
 		flex:1;
 		text-align: center;

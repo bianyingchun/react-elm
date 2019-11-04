@@ -18,6 +18,25 @@ export function getShopDetail(id) {
     })
   })
 }
+
+export function getShopComment(id) {
+  return new Promise((resolve, reject) => {
+    axios.get('/api/shopComment.json').then(res => {
+      resolve({err:null, data:res.data})
+    }).catch(err => {
+      reject({err:err});
+    })
+  })
+}
+ export function getShopBrandStroy(id) {
+  return new Promise((resolve, reject) => {
+    axios.get('/api/shopBrandStory.json').then(res => {
+      resolve({err:null, data:res.data})
+    }).catch(err => {
+      reject({err:err});
+    })
+  })
+}
   // pos = {
   //   latitude:31,
   //   longitude:121

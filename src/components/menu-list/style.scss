@@ -1,11 +1,13 @@
+@import '../../style/mixin.scss';
 .menu_wraper{
   display: flex;
-  margin-top:20px;
+  padding-top:20px;
   position: relative;
-  height:400px;
+  height:100%;
+  box-sizing:border-box;
   .nav_list{
-    width:80px;
-    margin-right: 10px;
+    width:pxTorem(160px);
+    margin-right: pxTorem(20px);
     height:100%;
   }
   .food_list{

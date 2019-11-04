@@ -1,0 +1,35 @@
+@import '../../style/mixin.scss';
+.shop_info{
+	background:#f5f5f5;
+	color:#666;
+	height:100%;
+	overflow:scroll-y;
+	.info{
+		background:#fff;
+		padding:pxTorem(32px) pxTorem(30px) pxTorem(30px);
+		>.title{
+			color:#000;
+			font-weight:700;
+			// font-size: pxTorem(30px);
+		}
+		.item{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size:pxTorem(26px);
+			padding:pxTorem(30px) pxTorem(30px) pxTorem(30px) 0;
+			&:not(:last-child) {
+			  border-bottom: 1px solid #ddd;
+			}
+			.title{
+				color:#333;
+				text-align:left;
+				font-weight:700;
+			}
+			.text{
+				max-width: 66.6%;
+				text-align: right;
+			}
+		}
+	}
+}

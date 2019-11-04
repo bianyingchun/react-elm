@@ -17,6 +17,7 @@ export function formatDistance(number) {
   if(number < 1000) return number+'米';
   return (number / 1000).toFixed(2) + '千米';
 }
+
 export function getImgaeUrl(path, is_bg) {
   const p1 = path.substring(0,1);
   const p2 = path.substring(1,3);
@@ -29,3 +30,7 @@ export function getImgaeUrl(path, is_bg) {
   }
   return `https://fuss10.elemecdn.com/${p1}/${p2}/${p3}.${p4}?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/`
  }
+
+export function getWinHeight() {
+  return window.innerHeight || document.body.clientHeight||document.documentElement.clientHeight;
+}

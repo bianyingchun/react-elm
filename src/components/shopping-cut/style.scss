@@ -1,0 +1,120 @@
+@import '../../style/mixin.scss';
+.cart_wraper{
+	position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height:pxTorem(100px);
+  background:#fff;
+  .mask{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right: 0;
+    background:#000;
+    opacity: 0.4;
+    transition: opacity .6s ease-in;
+  }
+  .cart_list{
+    position:absolute;
+    left:0;
+    bottom:pxTorem(100px);
+    width:100%;
+    background:#fff;
+    .discount-tip{
+      color:#333;
+      background:#fffad6;
+      text-align: center;
+      border-top:1px solid #f9e8a3;
+      height: pxTorem(39px);
+      line-height: pxTorem(39px);
+      font-size: pxTorem(20px);
+    }
+    .header{
+      display: flex;
+      height: 79px;
+      border-bottom:1px solid #eee;
+      padding:0 pxTorem(30px);
+      align-items:center;
+      background:#eceff1;
+      color:#666;
+      .text{
+        flex:1;
+    
+      }
+    }
+    .entity_list{
+      max-height: pxTorem(600px);
+      overflow-y: scroll;
+      >div{
+        display: flex;
+        align-items: center;
+        padding:pxTorem(15px) pxTorem(25px);
+        height: pxTorem(79px);
+        border-bottom:1px solid #eee;
+        .title{
+          flex:5.5;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .price{
+          flex:2.5;
+          text-align: right;
+        }
+        .count{
+          flex:3;
+          text-align: right;
+        }
+      }
+    }
+  }
+  .cart_footer{
+    color: #fff;
+    background: rgba(61,61,63,0.9);
+  	display: flex;
+  	position:relative;
+  	padding-left:pxTorem(158px);
+  	align-items:stretch;
+  	height: 100%;
+  	.price{
+      flex:1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  		.goods{
+        font-size:pxTorem(36px);
+        .origin_price{
+          text-decoration: line-through;
+          font-size:pxTorem(24px);
+          margin-left:pxTorem(20px);
+          color:#999;
+        }
+      }
+      .deliver{
+        font-size:pxTorem(20px);
+        color:#999;
+      }
+  	}
+  	.submit_btn{
+  		width:pxTorem(210px);
+      text-align: center;
+      line-height:pxTorem(100px);
+      color:#fff;
+      &.active{
+        background:#38ca73;
+        font-size: pxTorem(28px)
+      }
+      &.disable{
+        font-size:pxTorem(22px);
+        background:#535356;
+      }
+  	}
+  	.cart_icon {
+  		position:absolute;
+      left:0;
+      top:0;
+  	}
+  }
+}

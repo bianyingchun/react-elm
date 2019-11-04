@@ -1,0 +1,120 @@
+@import '../../../style/mixin.scss';
+.container{
+	padding-top:pxTorem(80px);
+	.header{
+		height: pxTorem(80px);
+		position: fixed;
+		left:0;
+		top:0;
+		text-align: center;
+		background-image: linear-gradient(90deg,#0af,#0085ff);
+		width: 100%;
+		color:#fff;
+		line-height: pxTorem(80px);
+		font-weight:bold;
+		.icon_back{
+			position:absolute;
+			left:pxTorem(20px);
+		}
+	}
+	.card{
+		font-size:pxTorem(28px);
+		background:#fff;
+		margin:pxTorem(20px);
+		padding:0 pxTorem(30px);
+		.title{
+			border-bottom:1px solid #eee;
+			line-height: pxTorem(80px);
+		}
+		.list_item{
+			border-bottom:1px solid #eee;
+			color:#6e6e6e;
+			padding:pxTorem(24px) pxTorem(60px) pxTorem(20px) 0;
+			display: flex;
+			align-items:baseline;
+			span{
+				flex:none;
+			}
+			.content{
+				line-height: 1.5em;
+			}
+		}
+	}
+	.status_card {
+		padding: 0 pxTorem(24px) pxTorem(40px) pxTorem(24px) ;
+		.title{
+			padding:pxTorem(32px) 0;
+			font-size: pxTorem(50px);
+			margin-bottom: pxTorem(32px);
+		}
+		.desc1{
+			font-size:pxTorem(34px);
+			margin-bottom: pxTorem(14px);
+		}
+		.desc2{
+			color: rgba(0,0,0,0.5);
+		}
+	}
+	.restaurant_card{
+		.head,.name_wrap{
+			display: flex;
+			align-items:center;
+		}
+		.head{
+			border-bottom:1px solid #d8d8d8;
+			justify-content: space-between;
+			padding:pxTorem(28px) 0;
+			.avatar{
+				width:pxTorem(40px);
+				height: pxTorem(40px);
+				margin-right: pxTorem(14px);
+			}
+		}
+		.final_price{
+			display: flex;
+			justify-content: space-between;
+			align-items:center;
+			padding:pxTorem(40px) 0;
+			.call_shoper{
+				color:#2395ff;
+			}
+			.total_price{
+				span{
+					font-size:pxTorem(28px);
+					margin-right: pxTorem(14px);
+				}
+				font-size: pxTorem(36px);
+			}
+		}
+		.product_item{
+			display: flex;
+			align-items: center;
+			padding:pxTorem(5px) 0;
+			border-bottom:1px solid #d8d8d8;
+			min-height: pxTorem(80px);
+			.profile{
+				flex:9;
+				.name{
+					overflow: hidden;
+  				white-space: nowrap;
+  				text-overflow: ellipsis;
+				}
+				.extra_item{
+					color: #666;
+					font-size: pxTorem(26px);
+				}
+			}
+			.num{
+				flex:1;
+				text-align: right;
+			}
+			.price{
+				flex:2;
+				text-align: right;
+				&.discount{
+					color: red;
+				}
+			}
+		}
+	}
+}

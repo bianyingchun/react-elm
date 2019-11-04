@@ -4,6 +4,8 @@ import * as shopSagas from '../components/shop-detail/store/sagas'
 export default function* rootSaga() {
   yield all([
     headerSagas.watchGetHomeShopList(),
-    shopSagas.watchGetShopDetail()
+    shopSagas.watchGetShopDetail(),
+    shopSagas.watchGetShopComment(),
+    shopSagas.watchGetShopBrandStory()
   ])
 }
