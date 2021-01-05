@@ -69,7 +69,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "fastclick": "^1.0.6",
     "immutable": "^4.0.0-rc.12",
     "react-redux": "^6.0.1",
